@@ -835,3 +835,33 @@
 // greet({ name: "yurs", age: 12, gender: "male" });
 
 // -------------------------------------------------------------------------
+
+// type User = {
+//   name: string,
+//   age: number,
+//   hobbies: string[],
+// };
+
+// function userConstructor(name: string, age: number, hobbies: string[]): User {
+//   return {name: name, age: age, hobbies: hobbies}
+// };
+
+// const newUser: User = userConstructor ('yura',39,['codding']);
+// console.log(newUser);
+
+// ---------------------------------------------------------------------------
+
+// type Car = {
+//   color: string;
+//   price: number;
+//   currency: string;
+//   start: (color: string) => void;
+// };
+
+// const car: Car = {
+//   color: "red",
+//   price: 1000,
+//   currency: "uah",
+//   start: (color) => console.log(color),
+// };
+// car.start("white");
