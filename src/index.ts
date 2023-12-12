@@ -865,3 +865,187 @@
 //   start: (color) => console.log(color),
 // };
 // car.start("white");
+
+// type Shop = {
+//   [key: string]:number;
+// }
+
+// const fruits: Shop = {
+//   apples: 10,
+//   bananas: 20,
+//   pears: 15,
+// };
+
+// const goods: Shop = {
+//   hammers: 3,
+//   nails: 30,
+// };
+
+// console.log(goods);
+// --------------------------------------------------------------------------------------
+
+// type MixedT = {
+//   [key: string]: number | string;
+// };
+
+// const lift: MixedT = {
+//   speed: 1,
+//   address: "haskjhakh",
+//   type: 'passenger',
+// };
+
+// console.log(lift);
+// -------------------------------------------------------------------
+// const identity = <T>(arg1: T): T =>{
+//   return arg1;
+// };
+// console.log(identity(10))
+// -------------------------------------------------------------------
+// const reverse = <T>(arr: T[]): T[] => {
+//   return arr.reverse();
+// };
+
+// console.log(reverse([1,2,3,4,5]));
+// console.log(reverse(['a', 'b', 'c']));
+// -------------------------------------------------------------------
+// const lengthOfSmthing = <T extends ({length: any})> (arg: T):number => {
+//   return arg.length
+// };
+
+// console.log(lengthOfSmthing({adf: 123, length: 10}))
+// -------------------------------------------------------------------
+// const getProperty = <T, K extends keyof T>(
+//   obj: T,
+//   key: K
+// ): T[K] => {
+//   return obj[key];
+// };
+
+// const user : {
+//   name: string,
+//   age: number,
+// } = {
+//   name: 'yura',
+//   age: 10,
+// };
+
+// console.log(getProperty(25, 'toString'))
+// --------------------------------------------------------------------
+// type Todo = {
+//   title: string;
+//   description: string;
+//   completed: boolean;
+// };
+
+// const updateTodo = (task: Todo, update: Partial<Todo>): Todo => {
+//   return { ...task, ...update };
+// };
+
+// const anyTask: Todo = {
+//   title: "some Title",
+//   description: "some description",
+//   completed: false,
+// };
+
+// const updating: Partial<Todo>  = {completed: true} ;
+// console.log(anyTask);
+// console.log(updateTodo(anyTask, updating))
+// ---------------------------------------------------------------------
+
+// type User = {
+//   name: string,
+//   age: number,
+//   changeName: Function,
+// };
+
+// const john: User = {
+//   name: "John",
+//   age: 20,
+//   changeName(newName: string) {
+//     this.name = newName
+//   }
+// };
+
+// console.log(john);
+// john.changeName('Bill');
+// console.log(john);
+// ---------------------------------------------------------------------
+// type Person = {
+//   name: string,
+//   age: number,
+//   address: string,
+// };
+
+// type PersonSummary = Pick<Person, 'name'| 'age'>;
+
+// type WithoutAddress = Omit<Person, 'address'>
+// const john: PersonSummary = {
+//   name: "John",
+//   age: 10,
+// };
+
+// const bill: WithoutAddress = {
+//   name:"Bill",
+//   age: 20,
+// }
+// -----------------------------------------------------------------------
+// type CityDataBase = Record<string,number>;
+
+// const dataBase: CityDataBase = {
+//   Kyev: 2884,
+//   Kharkiv: 1440,
+//   Odessa: 1015,
+// };
+// --------------------------------------------------------------------
+// function getPromise(): Promise<(string | number)[]> {
+//   return new Promise<(string | number)[]>((resolve) => {
+//     resolve(["hello", 55]);
+//   });
+// };
+
+// getPromise().then(console.log);
+// --------------------------------------------------------------------
+// type User = {
+//   name: string;
+//   age: number;
+//   country: string;
+// };
+
+// type UpdatedInfo = Partial<User>;
+
+// const updateUser = (user: User, data: UpdatedInfo): User => {
+//   return { ...user, ...data };
+// };
+
+// const yura: User = {
+//   name: "Yura",
+//   age: 10,
+//   country: "Ua",
+// };
+
+// console.log(yura);
+
+// const update: UpdatedInfo = {
+//   country: "fin",
+// };
+
+// console.log(updateUser(yura, update));
+// -----------------------------------------------------
+// interface Configuration {
+//   theme: "light" | "dark";
+//   lang: "en" | "ua";
+//   size: [number, number];
+// }
+
+// const defaultConfig: Configuration = {
+//   theme: "light",
+//   lang: "ua",
+//   size: [700, 300],
+// };
+
+// const changeConfig = (config: Partial<Configuration>): Configuration => {
+//   return { ...defaultConfig, ...config };
+// };
+
+// console.log(changeConfig({lang: 'en', size: [1000, 1000000000]}))
+// ------------------------------------------------------------------------
