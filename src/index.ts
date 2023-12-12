@@ -1094,3 +1094,24 @@
 //   return { title, content };
 // }
 // --------------------------------------------------------------------
+// const namesWithAge: Record<string, number> = {
+//   John: 12,
+//   Bill: 34,
+//   Sam: 32,
+// };
+
+// const monthDaysCount: Record<string, number> = {
+//   Jan: 31,
+//   Feb: 29,
+//   Mar: 31,
+//   Apr: 30,
+//   May: 31,
+//   Jun: 30,
+//   Jul: 31,
+//   Aug: 31,
+//   Sep: 30,
+//   Oct: 31,
+//   Nov: 30,
+//   Dec: 31,
+// };
+// ---------------------------------------------------------------------
