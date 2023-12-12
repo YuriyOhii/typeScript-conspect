@@ -1115,3 +1115,24 @@
 //   Dec: 31,
 // };
 // ---------------------------------------------------------------------
+// interface User {
+//   name: string;
+//   password: string;
+//   email: string;
+// }
+
+// type UserWithoutPassword = Omit<User, "password">;
+
+// const user: UserWithoutPassword = {
+//   name: "John",
+//   email: "john@gmail.com",
+// };
+
+// interface APIresponse {
+//   id: string;
+//   title: string;
+//   content: string;
+//   createdAt: Date;
+// }
+
+// type ResponseWithOut = Omit<APIresponse, 'createdAt'>
