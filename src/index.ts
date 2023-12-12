@@ -1136,3 +1136,48 @@
 // }
 
 // type ResponseWithOut = Omit<APIresponse, 'createdAt'>
+// -----------------------------------------------------------------------
+// interface Menu {
+//   title: string,
+//   price: number,
+//   category: 'snack' | 'main' | 'desert',
+// };
+
+// function filterByCategories (menu: Menu[], category: Pick<Menu, 'category'>): Menu[] {
+//   return menu.filter(el=>{
+//     console.log(el.category);
+//     console.log(category.category)
+//     return el.category === category.category})
+// };
+
+// const frickMenu: Menu[] = [
+//   {title: 'asdf',
+//   price: 240,
+//   category: 'desert',
+//   },
+//   {title: 'qwe',
+//   price: 240,
+//   category: 'main',
+//   },{title: 'aqz',
+//   price: 240,
+//   category: 'desert',
+//   },{title: 'zxc',
+//   price: 240,
+//   category: 'main',
+//   },{title: 'cvb',
+//   price: 240,
+//   category: 'main',
+//   },{title: 'dgdfg',
+//   price: 240,
+//   category: 'main',
+//   },{title: 'reterte',
+//   price: 240,
+//   category: 'main',
+//   },{title: 'gfhghf',
+//   price: 240,
+//   category: 'main',
+//   },
+// ];
+
+// console.log(filterByCategories(frickMenu, {category: 'main'}))
+// -------------------------------------------------------------
