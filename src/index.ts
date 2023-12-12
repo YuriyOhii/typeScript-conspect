@@ -1067,3 +1067,30 @@
 
 // config.port = 1000
 // --------------------------------------------------------------
+// interface User {
+//   name: string;
+//   email: string;
+//   age: number;
+// }
+
+// function getNameAndEmail(user: User): Pick<User, "email" | "name"> {
+//   return {
+//     name: user.name,
+//     email: user.email,
+//   };
+// }
+
+// interface APIresponse {
+//   id: string;
+//   title: string;
+//   content: string;
+//   createdAt: Date;
+// }
+
+// function getWhatIsNeeded({
+//   title,
+//   content,
+// }: APIresponse): Pick<APIresponse, "content" | "title"> {
+//   return { title, content };
+// }
+// --------------------------------------------------------------------
