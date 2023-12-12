@@ -1048,4 +1048,22 @@
 // };
 
 // console.log(changeConfig({lang: 'en', size: [1000, 1000000000]}))
-// ------------------------------------------------------------------------
+// ----------------------------------------------------------------------
+// function noChange(numbers: ReadonlyArray<number>): number[] {
+//   return Array.from(numbers);
+// }
+// -------------------------------------------------------
+// type Config = {
+//   port: number,
+//   name: string,
+//   thema: "dark" | 'light',
+// }
+
+// const config: Readonly<Config>= {
+//   port: 8000,
+//   name: "thema",
+//   thema: "dark",
+// };
+
+// config.port = 1000
+// --------------------------------------------------------------
