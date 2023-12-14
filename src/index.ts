@@ -1181,3 +1181,43 @@
 
 // console.log(filterByCategories(frickMenu, {category: 'main'}))
 // -------------------------------------------------------------
+// interface User {
+//   name: string;
+//   email: string;
+//   birthDate: string;
+// }
+
+// function isUserAdult(user: User): boolean {
+//   const date = Date.now();
+//   const birthDate = new Date(user.birthDate);
+//   const adultDate: number = birthDate.setFullYear(birthDate.getFullYear() + 18);
+//   return date > adultDate;
+// }
+// const user: User = {
+//   name: "Yura",
+//   email: "as",
+//   birthDate: "2005 12 15",
+// };
+
+// console.log(isUserAdult(user));
+// --------------------------------------------------------------------
+// interface CarProperty {
+//   brand: string;
+//   year: number;
+//   fuelType: string;
+// }
+
+// class Car implements CarProperty {
+//   constructor(
+//     public brand: string,
+//     public year: number,
+//     public fuelType: string
+//   ) {}
+//   getDetails(): void {
+//     console.log(`${this.brand} ${this.year} ${this.fuelType}`);
+//   }
+// };
+// const car: Car = new Car('dacia', 2015, 'disel');
+// car.getDetails()
+
+
