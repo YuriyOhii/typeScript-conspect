@@ -1252,3 +1252,12 @@
 
 // promise.then(response=> console.log(response)).catch(error => console.log(error));
 // ----------------------------------------------------------
+// function identity<T>(arg: T): T {
+//   return arg;
+// };
+
+// let output = identity(5);
+// console.log(output);
+// let output1 = identity("string");
+// console.log(output1)
+// -----------------------------------------------------
