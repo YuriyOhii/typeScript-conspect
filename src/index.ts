@@ -1261,3 +1261,10 @@
 // let output1 = identity("string");
 // console.log(output1)
 // -----------------------------------------------------
+function getTheFirstEl<T>(arrIn: T[]): T {
+  return arrIn[0];
+}
+
+const firstNumber = getTheFirstEl([1, 2, 3, 4, 5]);
+const firstLetter = getTheFirstEl(["a", "b", "c", "d"]);
+console.log("firstNumber   ", firstNumber, "; ", "first letter  ", firstLetter);
