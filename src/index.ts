@@ -1219,5 +1219,23 @@
 // };
 // const car: Car = new Car('dacia', 2015, 'disel');
 // car.getDetails()
+// --------------------------------------------------------------
+interface StudentData {
+  name: string;
+  studentId: string;
+  major: boolean;
+}
 
+class Student implements StudentData {
+  constructor(
+    public name: string,
+    public studentId: string,
+    public major: boolean
+  ) {}
+  introduce():void {
+    console.log(`My name is ${this.name}, my studentId is ${this.studentId} and major is ${this.major}`)
+  }
+};
 
+const student : Student = new Student('yura', "dssfaiuu3246", true);
+student.introduce();
