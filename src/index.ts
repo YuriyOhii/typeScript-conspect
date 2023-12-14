@@ -1220,22 +1220,35 @@
 // const car: Car = new Car('dacia', 2015, 'disel');
 // car.getDetails()
 // --------------------------------------------------------------
-interface StudentData {
-  name: string;
-  studentId: string;
-  major: boolean;
-}
+// interface StudentData {
+//   name: string;
+//   studentId: string;
+//   major: boolean;
+// }
 
-class Student implements StudentData {
-  constructor(
-    public name: string,
-    public studentId: string,
-    public major: boolean
-  ) {}
-  introduce():void {
-    console.log(`My name is ${this.name}, my studentId is ${this.studentId} and major is ${this.major}`)
-  }
-};
+// class Student implements StudentData {
+//   constructor(
+//     public name: string,
+//     public studentId: string,
+//     public major: boolean
+//   ) {}
+//   introduce():void {
+//     console.log(`My name is ${this.name}, my studentId is ${this.studentId} and major is ${this.major}`)
+//   }
+// };
 
-const student : Student = new Student('yura', "dssfaiuu3246", true);
-student.introduce();
+// const student : Student = new Student('yura', "dssfaiuu3246", true);
+// student.introduce();
+
+// type MixedType = Array<number | string>;
+
+// const arr: MixedType = [1,2,3,'3',3,'hjfskjfkjsh']
+// -----------------------------------------------------------------------
+// const promise: Promise<string> = new Promise((res, rej) => {
+//   setInterval(() => {
+//     res('i am a string');
+//   }, 3000);
+// });
+
+// promise.then(response=> console.log(response)).catch(error => console.log(error));
+// ----------------------------------------------------------
