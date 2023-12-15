@@ -1261,10 +1261,39 @@
 // let output1 = identity("string");
 // console.log(output1)
 // -----------------------------------------------------
-function getTheFirstEl<T>(arrIn: T[]): T {
-  return arrIn[0];
-}
+// function getTheFirstEl<T>(arrIn: T[]): T {
+//   return arrIn[0];
+// }
 
-const firstNumber = getTheFirstEl([1, 2, 3, 4, 5]);
-const firstLetter = getTheFirstEl(["a", "b", "c", "d"]);
-console.log("firstNumber   ", firstNumber, "; ", "first letter  ", firstLetter);
+// const firstNumber = getTheFirstEl([1, 2, 3, 4, 5]);
+// const firstLetter = getTheFirstEl(["a", "b", "c", "d"]);
+// console.log("firstNumber   ", firstNumber, "; ", "first letter  ", firstLetter);
+// ----------------------------------------------------------------
+// function merge<T extends {}>(arg1: T, arg2: T): T {
+//   return Object.assign(arg1, arg2);
+// };
+
+// type Person = {
+//   name: "yura",
+// };
+
+// const yura: Person = {
+//   name: "yura",
+// }
+
+// type AdditionalVal = {
+//   age: number,
+// };
+
+// const addVal = {age: 25}
+// -----------------------------------------------------------------
+// type Length = {
+//   length: number,
+// };
+
+// const getLength =<T extends Length>(arr: T):number => {
+// return arr.length;
+// };
+
+// console.log(getLength({length: 23}))
+// -----------------------------------------------------------------
