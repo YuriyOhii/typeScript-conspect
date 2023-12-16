@@ -1356,3 +1356,24 @@
 
 // const eva = new ValuePair('eva', 'clever');
 // console.log(eva.getValue());
+// const arr: Array<string> = ['1', '2', '3','4']
+// console.log(arr[0]);
+// arr.push('five');
+// const five = 5
+// console.log(arr);
+// -----------------------------------------------
+// interface User {
+//   id: number,
+//   name: string,
+//   email: string,
+//   registered: Date,
+// };
+
+// function createUser<T extends User>(user: Partial <T>):User {
+  
+//   return {...{id: 34, name :'niname', email: "ddkjshfk", registered: new Date}
+//   , ...user}
+// }
+// ------------------------------------------------------
+
+
