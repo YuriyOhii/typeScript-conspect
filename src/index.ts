@@ -1296,4 +1296,37 @@
 // };
 
 // console.log(getLength({length: 23}))
+// ----------------------------------------------------------------
+// function arrayLogger<T extends Array<string>>(arg: T): void {
+//   arg.forEach((el) => console.log(el));
+// }
+// const arr: Array<string> = ["1", "2", "3", "4", "5"];
+// arrayLogger(arr);
+// arrayLogger([1,2,3,4])
 // -----------------------------------------------------------------
+// interface Person {
+//   name: string;
+//   age: number;
+//   location: string;
+// }
+
+// type PersonKeys = keyof Person;
+
+// const ok: PersonKeys = "name";
+// const freedom: PersonKeys = "location";
+
+// function getUserInfo<T extends Person, K extends keyof T>(
+//   user: T,
+//   key: K
+// ): T[K] {
+//   return user[key];
+// };
+
+// const yura: Person = {
+//   name: 'yura',
+//   age: 39,
+//   location: 'ukr',
+// };
+// console.log(getUserInfo(yura, 'age'))
+// ----------------------------------------------------------------------
+
