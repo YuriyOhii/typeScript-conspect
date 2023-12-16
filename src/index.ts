@@ -1329,4 +1329,30 @@
 // };
 // console.log(getUserInfo(yura, 'age'))
 // ----------------------------------------------------------------------
+// class GeneralClass<T> {
+//   private data: Array<T> = [];
+//   put(el: T): void {
+//     this.data.push(el);
+//   }
+//   get(el: number): T {
+//     return this.data[el];
+//   }
+// };
 
+// const numbers = new GeneralClass<number>;
+// numbers.put(3);
+// numbers.put(5);
+// console.log(numbers.get(1));
+// --------------------------------------------------------------------
+// class ValuePair<T, K> {
+//   constructor(private key: T, private value: K) {}
+//   getKey(): T {
+//     return this.key;
+//   }
+//   getValue(): K {
+//     return this.value;
+//   }
+// };
+
+// const eva = new ValuePair('eva', 'clever');
+// console.log(eva.getValue());
