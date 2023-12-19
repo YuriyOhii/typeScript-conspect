@@ -1480,14 +1480,194 @@
 //   }
 // };
 // ------------------------------------------------------------------
-type Person = {
-  name: string,
-  age: number,
-  location: string,
-};
+// type Person = {
+//   name: string,
+//   age: number,
+//   location: string,
+// };
 
-type PersonWitjoutLocation = Omit<Person, 'location'>;
-const user: PersonWitjoutLocation = {
-  name: 'yura',
-  age: 34,
-}
+// type PersonWitjoutLocation = Omit<Person, 'location'>;
+// const user: PersonWitjoutLocation = {
+//   name: 'yura',
+//   age: 34,
+// }
+// -------------------------------------------------------------
+// const greeting=()=> 'Hello world';
+// const a = greeting;
+// type Greeting = ReturnType<typeof greeting>
+
+// const multyplay = (a: number, b: number):number => {
+//   return a*b;
+// };
+// type Multiply = ReturnType<typeof multyplay>;
+// --------------------------------------------------------------
+// type MyFunctionType = (a:null, b: number, c: string)=>void;
+// type MyParametersType = Parameters<MyFunctionType>;
+// const a: MyParametersType = [null, 12, ''];
+// ================================================================
+// type SomeType = string | null | undefined|number;
+// type NonableType = NonNullable<SomeType>;
+// --------------------------------------------------------------
+
+// type Callback = (...args: unknown[]) => unknown;
+
+// function createLoggedFunction<T extends Callback>(func: T) {
+//   let funcRef = func;
+
+//   const loggedFunction = (...args: Parameters<T>) => {
+//     console.log(`Function ${func.name} was called with arguments:`, args);
+//     const result = funcRef(...args) as ReturnType<T>;
+//     return result;
+//   };
+
+//   return loggedFunction;
+// }
+// const multyplay = (a: number, b: number):number => {
+//   return a*b;
+// };
+
+// const greeting: Callback = () => console.log("Hello");
+// console.log(createLoggedFunction(multyplay(2 as unknown, 3 as unknown)));
+// ------------------------------------------------------------
+// ### Завдання 1
+// Є наступний JavaScript код:
+
+// ```ts
+// let age: number = 50;
+// let nam: string = 'Max';
+// let toggle: boolean = true;
+// let empty: null = null;
+// let notInitialize: undefined;
+// let callback = (a: number): number => { return 100 + a };
+// // ```
+// ### Завдання 2
+// JavaScript змінна може зберігати значення будь-якого типу:
+// ```ts
+// let anything: unknown|any = -20;
+// anything = 'Text';
+// anything = {};
+// ```
+// Який тип ви надаєте змінній anything в TypeScript, щоб зберегти її гнучкість?
+// ### Завдання 3
+
+// У TypeScript тип unknown дозволяє нам зберігати будь-які
+//  значення, але ми можемо привласнити unknown змінну
+//  безпосередньо інший змінної, якщо ми впевнені у її типі.
+//   У вас є наступний код:
+// ```ts
+// let some: unknown;
+// some = "Text";
+// let str: string;
+// if (typeof some === "string") {
+//   str = some;
+// }
+
+// ```
+// Що потрібно виправити в цьому коді, щоб він
+//  став правильним та безпечним?
+
+// ### Завдання 4
+// У вас є наступний JavaScript масив:
+// ```ts
+// let person: [string, number] = ['Max', 21];
+// ```
+// Як переписати його в TypeScript, використовуючи концепцію 
+// кортежів, щоб гарантувати, що перший елемент завжди буде 
+// рядком, а другий числом?
+
+// ### Завдання 5
+// Як ви визначите змінну в TypeScript, яка може приймати
+//  рядок або число (union type)? І так само визначте змінну, 
+//  яка може приймати тільки одне з двох рядкових значень:
+//   'enable' або 'disable' (literal type)?
+
+  // type MixedVar1 = string|number;
+  // type Status = 'enable'|'disable';
+  // ---------------------------------------------------
+  // ### Завдання 6
+  // У вас є такі функції JavaScript:
+  // ```ts
+  // function showMessage(message: string): void {
+  //   console.log(message);
+  // }
+  
+  // function calc(num1: number, num2: number): number {
+  //   return num1 + num2;
+  // }
+  
+  // function customError(): never {
+  //   throw new Error('Error');
+  // }
+  // ```
+  // Як ви вкажете типи для аргументів 
+  // і значень цих функцій, що повертаються?
+
+  // -----------------------------------------------------
+
+//   ### Завдання 7
+// Створіть функцію (isWeekend), яка приймає день
+//  тижня (з вашого enum) і повертає boolean значення,
+//  що вказує, чи це день робочий чи вихідний.
+
+// enum WeekDays {
+//   Mon,
+//   Tue,
+//   Wed,
+//   Thu,
+//   Fri,
+//   Sat,
+//   Sun,
+// };
+
+// function isWeekend (day: WeekDays):boolean {
+//   return day > 4;
+// };
+// console.log(isWeekend(WeekDays.Sun))'
+// ---------------------------------------------------
+
+// ### Завдання 8
+// Створіть тип "Gender", використовуючи union type, 
+// який може містити значення "male", "female".
+//  Створіть змінну myGender цього типу.
+
+// type Gender = 'male'|'female';
+// const myGender: Gender = 'male';
+// ----------------------------------------------------
+
+// ### Завдання 9
+// У вас є два об'єкти:
+// ```ts
+
+// type Page = {
+//   title: string,
+//   likes: number,
+//   accounts: string[],
+//   status: 'open'|'close',
+//   details?:  {
+// createAt: Date,
+// updateAt: Date,
+//   }
+// }
+
+// const page1: Page = {
+//   title: 'The awesome page',
+//   likes: 100,
+//   accounts: ['Max', 'Anton', 'Nikita'],
+//   status: 'open',
+//   details: {
+//     createAt: new Date('2021-01-01'),
+//     updateAt: new Date('2021-05-01'),
+//   }
+// }
+
+// const page2: Page = {
+//   title: 'Python or Js',
+//   likes: 5,
+//   accounts: ['Alex'],
+//   status: 'close',
+// }
+// ```
+// Створіть новий тип даних, який підходить
+//  для цих двох об'єктів.
+
+
