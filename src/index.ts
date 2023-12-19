@@ -1480,3 +1480,14 @@
 //   }
 // };
 // ------------------------------------------------------------------
+type Person = {
+  name: string,
+  age: number,
+  location: string,
+};
+
+type PersonWitjoutLocation = Omit<Person, 'location'>;
+const user: PersonWitjoutLocation = {
+  name: 'yura',
+  age: 34,
+}
