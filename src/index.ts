@@ -1409,24 +1409,74 @@
 
 // console.log(userBasicInfo)
 // --------------------------------------------------------
-interface BaseEmployee {
-  id: number;
-  firstName: string;
-  lastName: string;
-  position: string;
-  department: string;
-  startDate: Date;
-}
+// interface BaseEmployee {
+//   id: number;
+//   firstName: string;
+//   lastName: string;
+//   position: string;
+//   department: string;
+//   startDate: Date;
+// }
 
-interface BaseProject {
-  id: number;
-  name: string;
-  budget: number;
-  deadline: Date;
-}
+// interface BaseProject {
+//   id: number;
+//   name: string;
+//   budget: number;
+//   deadline: Date;
+// }
 
-type Assignment = {
-  employee: Pick<BaseEmployee, "id" | "firstName" | "lastName">;
-  projects: Pick<BaseProject, "id" | "name" | "deadline">[];
-  shouldNotifyEmployee: boolean;
-};
+// type Assignment = {
+//   employee: Pick<BaseEmployee, "id" | "firstName" | "lastName">;
+//   projects: Pick<BaseProject, "id" | "name" | "deadline">[];
+//   shouldNotifyEmployee: boolean;
+// };
+// --------------------------------------------------------------------
+// type Weekdays = "Mon" | "Tue" | "Wed" | "Thu" | "Fri";
+// type Weekend = "Sat" | "Sun";
+// type Day = Weekdays | Weekend;
+// type DayTranslations = Record<Day, string>;
+// const translations: DayTranslations = {
+//   Mon: "понеділок",
+//   Tue: "вівторок",
+//   Wed: "середа",
+//   Thu: "четвер",
+//   Fri: "п'ятниця",
+//   Sat: "субота",
+//   Sun: "неділя",
+// };
+// console.log(translations["Sun"])
+// -------------------------------------------------------------------
+// enum Userroles {
+//   admin = "admin",
+//   manager = "manager",
+//   employee = "employee",
+// }
+// type UserRolesStatuses = Record<Userroles, boolean>;
+
+// const userRolesStatuses = {
+//   [Userroles.admin]: true,
+//   [Userroles.manager]: false,
+//   [Userroles.employee]: true,
+// };
+
+// console.log(userRolesStatuses);
+// -----------------------------------------------------------------------
+// interface InitialFormType {
+//   name: string;
+//   email: string;
+//   password: string;
+// }
+
+// type Form = InitialFormType & {
+//   errors: Partial<Record<keyof InitialFormType, [string]>>;
+// };
+
+// const form: Form = {
+//   name: "123",
+//   email: "adasda",
+//   password: "qwe",
+//   errors: {
+//     name: ["sdssds"],
+//   }
+// };
+// ------------------------------------------------------------------
