@@ -1370,10 +1370,63 @@
 // };
 
 // function createUser<T extends User>(user: Partial <T>):User {
-  
+
 //   return {...{id: 34, name :'niname', email: "ddkjshfk", registered: new Date}
 //   , ...user}
 // }
 // ------------------------------------------------------
+// type User = {
+//   name: string,
+//   id: number,
+//   email: string,
+// };
 
+// const alice: Readonly<User> = {
+//   name: 'Alice',
+//   id: 1,
+//   email: 'asdds',
+// };
+// console.log(alice)
+// alice.name = 'Bob';
+// console.log(alice);
+// --------------------------------------------------------
+// const arr: Array<string> = ['one', 'two', 'three'];
+// console.log(arr);
+// arr.push(true);
+// console.log(arr);
+// --------------------------------------------------------
+// interface User {
+//   id: number;
+//   name: string;
+//   email: string;
+// }
+// type UserBasicInfo = Pick<User, "id" | "name">;
 
+// const userBasicInfo: UserBasicInfo = {
+//   id: 1,
+//   name: 'yura',
+// };
+
+// console.log(userBasicInfo)
+// --------------------------------------------------------
+interface BaseEmployee {
+  id: number;
+  firstName: string;
+  lastName: string;
+  position: string;
+  department: string;
+  startDate: Date;
+}
+
+interface BaseProject {
+  id: number;
+  name: string;
+  budget: number;
+  deadline: Date;
+}
+
+type Assignment = {
+  employee: Pick<BaseEmployee, "id" | "firstName" | "lastName">;
+  projects: Pick<BaseProject, "id" | "name" | "deadline">[];
+  shouldNotifyEmployee: boolean;
+};
