@@ -1509,12 +1509,12 @@
 // type NonableType = NonNullable<SomeType>;
 // --------------------------------------------------------------
 
-// type Callback = (...args: unknown[]) => unknown;
+// type Callback<T extends unknown[] = any[], R = unknown> = (...args: T) => R;
 
 // function createLoggedFunction<T extends Callback>(func: T) {
 //   let funcRef = func;
 
-//   const loggedFunction = (...args: Parameters<T>) => {
+//   const loggedFunction = (...args: Parameters<T>):ReturnType<T> => {
 //     console.log(`Function ${func.name} was called with arguments:`, args);
 //     const result = funcRef(...args) as ReturnType<T>;
 //     return result;
@@ -1522,12 +1522,16 @@
 
 //   return loggedFunction;
 // }
-// const multyplay = (a: number, b: number):number => {
-//   return a*b;
-// };
+// function exampleFunction(a: number, b: number): number {
+//   return a + b;
+// }
 
-// const greeting: Callback = () => console.log("Hello");
-// console.log(createLoggedFunction(multyplay(2 as unknown, 3 as unknown)));
+// const loggedExampleFunction = createLoggedFunction(exampleFunction);
+
+// loggedExampleFunction(2, 3);
+
+
+
 // ------------------------------------------------------------
 // ### Завдання 1
 // Є наступний JavaScript код:
@@ -1571,38 +1575,38 @@
 // ```ts
 // let person: [string, number] = ['Max', 21];
 // ```
-// Як переписати його в TypeScript, використовуючи концепцію 
-// кортежів, щоб гарантувати, що перший елемент завжди буде 
+// Як переписати його в TypeScript, використовуючи концепцію
+// кортежів, щоб гарантувати, що перший елемент завжди буде
 // рядком, а другий числом?
 
 // ### Завдання 5
 // Як ви визначите змінну в TypeScript, яка може приймати
-//  рядок або число (union type)? І так само визначте змінну, 
+//  рядок або число (union type)? І так само визначте змінну,
 //  яка може приймати тільки одне з двох рядкових значень:
 //   'enable' або 'disable' (literal type)?
 
-  // type MixedVar1 = string|number;
-  // type Status = 'enable'|'disable';
-  // ---------------------------------------------------
-  // ### Завдання 6
-  // У вас є такі функції JavaScript:
-  // ```ts
-  // function showMessage(message: string): void {
-  //   console.log(message);
-  // }
-  
-  // function calc(num1: number, num2: number): number {
-  //   return num1 + num2;
-  // }
-  
-  // function customError(): never {
-  //   throw new Error('Error');
-  // }
-  // ```
-  // Як ви вкажете типи для аргументів 
-  // і значень цих функцій, що повертаються?
+// type MixedVar1 = string|number;
+// type Status = 'enable'|'disable';
+// ---------------------------------------------------
+// ### Завдання 6
+// У вас є такі функції JavaScript:
+// ```ts
+// function showMessage(message: string): void {
+//   console.log(message);
+// }
 
-  // -----------------------------------------------------
+// function calc(num1: number, num2: number): number {
+//   return num1 + num2;
+// }
+
+// function customError(): never {
+//   throw new Error('Error');
+// }
+// ```
+// Як ви вкажете типи для аргументів
+// і значень цих функцій, що повертаються?
+
+// -----------------------------------------------------
 
 //   ### Завдання 7
 // Створіть функцію (isWeekend), яка приймає день
@@ -1626,7 +1630,7 @@
 // ---------------------------------------------------
 
 // ### Завдання 8
-// Створіть тип "Gender", використовуючи union type, 
+// Створіть тип "Gender", використовуючи union type,
 // який може містити значення "male", "female".
 //  Створіть змінну myGender цього типу.
 
@@ -1669,5 +1673,158 @@
 // ```
 // Створіть новий тип даних, який підходить
 //  для цих двох об'єктів.
+
+// ### Завдання 1
+// Є функція getPromise(), яка повертає проміс,
+//  що дозволяється в масив, що містить рядки та числа.
+//  Доповніть цю функцію, використовуючи generics,
+//   щоб вона повертала правильний тип.
+// ```ts
+// function getPromise ():Promise<Array<string|number>> {
+//   return new Promise((resolve) => {
+//     resolve(['Text', 50]);
+//   });
+// }
+
+// getPromise()
+// .then((data) => {
+//   console.log(data);
+// });
+// ```
+// ------------------------------------------------------
+
+// ### Завдання 2
+// У вас є тип AllType. Існує функція compare,
+// яка приймає два об'єкти. Ці об'єкти містять поля AllType.
+//  Ваше завдання – використовувати Pick та generics для
+//   вказівки, що поля цих об'єктів належать AllType.
+//    Функція compare повинна повертати AllType.
+// ```ts
+// type AllType = {
+//   name: string;
+//   position: number;
+//   color: string;
+//   weight: number;
+// };
+
+// function compare(
+//   top: Pick<AllType, "name" | "color">,
+//   bottom: Pick<AllType, "position" | "weight">
+// ): AllType {
+//   return {
+//     name: top.name,
+//     color: top.color,
+//     position: bottom.position,
+//     weight: bottom.weight,
+//   };
+// }
+
+// -----------------------------------------------------
+// ## Завдання 3
+// У вас є функція merge, яка поєднує два об'єкти.
+//  Використовуйте generics, щоб вказати, що ці об'єкти можуть бути 
+//  будь-якого типу.
+// ```ts
+// function merge<T extends object> (objA: T, objB: T) {
+//   return Object.assign(objA, objB);
+// };
+//  const obj = merge(page1, page2);
+//  console.log(obj)
+// ```;
+//  -------------------------------------------------------------------
+// ### Завдання 4
+// Використовуйте generics та інтерфейси, щоб виправити помилку
+//  в наступних класах:
+// ```ts
+// class Component <T>{
+//   constructor (public props:T) {
+
+//   }
+// };
+// interface Props{
+//   title: string,
+// }
+
+// class Page extends Component<Props> {
+//   pageInfo () {
+//     console.log(this.props.title);
+//   }
+// }
+// ```
+// -------------------------------------------------------
+// ### Завдання 5
+// Вам потрібно реалізувати інтерфейс KeyValuePair,
+//  який описує пару ключ-значення. Використовуйте generics,
+//   щоб цей інтерфейс міг працювати з будь-якими типами ключів та значень.
+// ```ts
+// interface KeyValuePair<K , V > {
+//   key: K;
+//   value: V;
+// }
+// ```
+// --------------------------------------------------------------------
+// Ви маєте форму реєстрації користувачів. Іноді потрібно попередньо 
+// заповнити форму даними користувача для оновлення його профілю. 
+// Однак вам не завжди потрібно заповнити всі поля. Наприклад,
+//  користувач може хотіти оновити лише свій email та пароль, 
+//  залишивши ім'я та прізвище без змін.
+
+// Виправте тип у аргументі функції так, щоб не було помилок типу.
+// ```ts
+// type User = {
+//   name: string;
+//   surname: string;
+//   email: string;
+//   password: string;
+// }
+
+// function createOrUpdateUser(initialValues: Partial<User>) {
+//   // Оновлення користувача
+// }
+
+// createOrUpdateUser({ email: 'user@mail.com', password: 'password123' });
+// ```
+// ### Завдання 7
+// У вас є перелік UserRole, який використовується для класифікації
+// користувачів у вашому додатку. Ви хочете створити
+//  об'єкт RoleDescription, який зіставлятиме кожну роль 
+//  користувача з її описом.
+// ```ts
+// export enum UserRole {
+//   admin = 'admin',
+//   editor = 'editor',
+//   guest = 'guest',
+// }
+
+// // Замініть наступний код на версію за допомогою Record
+// const RoleDescription: Record<UserRole, string> = {
+//   [UserRole.admin]: 'Admin User',
+//   [UserRole.editor]: 'Editor User',
+//   [UserRole.guest]: 'Guest User',
+// };
+// ```
+// ### Завдання 8
+// У вас є тип Form, який містить інформацію про форму, включаючи поле 
+// errors. Ви хочете створити новий тип Params, який включає всі поля з
+//  Form, крім errors.
+// ```ts
+// type Errors = {
+//   email?: string[];
+//   firstName?: string[];
+//   lastName?: string[];
+//   phone?: string[];
+// };
+
+// type Form = {
+//   email: string | null;
+//   firstName: string | null;
+//   lastName: string | null;
+//   phone: string | null;
+//   errors: Errors;
+// };
+
+// // Реалізуйте Params так, щоб унеможливити поле 'errors' з типу Form
+// type Params = Omit<Form, 'errors'>;
+// // ``
 
 
